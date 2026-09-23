@@ -24,6 +24,15 @@ dist-ssr
 *.sln
 *.sw?
 
-# Documentation
+# Documentation: keep local historical references private to this workspace
 docs/*
 !docs/guidelines/
+!docs/reviews/
+
+# Local environment and generated test artifacts
+.env
+.env.*
+!.env.example
+coverage/
+.vitest/
+*.tsbuildinfo

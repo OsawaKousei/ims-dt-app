@@ -16,17 +16,17 @@ Rust business logic, or other native integrations merely for future use.
 Use the following documents according to the task.
 
 - TypeScript application code:
-  `docs/guidelines/typescript-basic.md`
+  `docs/guidelines/TypeScript Basic Guideline.md`
 
 - React components, state ownership, UI architecture, hooks, or feature structure:
-  `docs/guidelines/react-ui.md`
+  `docs/guidelines/React UI Guideline.md`
 
 - Tests, test architecture, runtime validation, or test dependencies:
-  `docs/guidelines/frontend-testing.md`
+  `docs/guidelines/Frontend Testing Guideline.md`
 
 - Tauri configuration, Vite/Tauri build, environment configuration,
   external API communication, CSP, or desktop WebView behavior:
-  `docs/guidelines/tauri-desktop-platform.md`
+  `docs/guidelines/Tauri Desktop Platform Guideline.md`
 
 Read only the guidelines relevant to the current task.
 For changes spanning multiple areas, apply all relevant guidelines.
@@ -56,3 +56,15 @@ when the available development environment supports it.
 
 Do not add new test frameworks or infrastructure unless the existing
 verification strategy cannot reasonably cover the required behavior.
+
+## Commands and Current Structure
+
+Use npm and the committed package-lock.json; install with `npm ci`.
+Run `npm run check` for type checks, lint, tests, and formatting checks.
+Run `npm run build` for the frontend production build.
+Use `npm run test:watch` only when an ongoing watch process is intended.
+
+Tests are colocated as `*.test.ts` / `*.test.tsx`. The default environment is
+Node; DOM tests opt in with `// @vitest-environment jsdom`.
+Create feature directories when actual features need them. Do not treat
+local `docs/archive/` documents as current instructions.

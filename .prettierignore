@@ -2,3 +2,10 @@ node_modules
 dist
 src-tauri/target
 src-tauri/gen
+coverage
+.vitest
+package-lock.json
+src-tauri/Cargo.lock
+docs/archive
+docs/original
+docs/original_guidelines

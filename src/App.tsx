@@ -1,4 +1,3 @@
-import { invoke } from '@tauri-apps/api/core';
 import { useState } from 'react';
 import './App.css';
 import reactLogo from './assets/react.svg';
@@ -7,9 +6,8 @@ const App = () => {
   const [greetMsg, setGreetMsg] = useState('');
   const [name, setName] = useState('');
 
-  const greet = async () => {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke('greet', { name }));
+  const greet = () => {
+    setGreetMsg(`Hello, ${name.trim() || 'World'}!`);
   };
 
   return (
@@ -36,14 +34,16 @@ const App = () => {
           greet();
         }}
       >
+        <label htmlFor="greet-input">Name</label>
         <input
           id="greet-input"
+          value={name}
           onChange={(e) => setName(e.currentTarget.value)}
           placeholder="Enter a name..."
         />
         <button type="submit">Greet</button>
       </form>
-      <p>{greetMsg}</p>
+      <p role="status">{greetMsg}</p>
     </main>
   );
 };

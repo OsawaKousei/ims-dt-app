@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// @ts-expect-error type error without @types/node package
 import process from 'node:process';
 const host = process.env.TAURI_DEV_HOST;
 
@@ -8,7 +7,7 @@ const host = process.env.TAURI_DEV_HOST;
 export default defineConfig(() => ({
   plugins: [react()],
 
-  // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
+  // Shared settings for browser development and Tauri.
   //
   // 1. prevent Vite from obscuring rust errors
   clearScreen: false,
