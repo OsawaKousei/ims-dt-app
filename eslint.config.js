@@ -14,27 +14,31 @@ export default [
       '**/lib/utils.ts', // shadcn/ui でよく使われる utils (cn関数等)
       '**/.next/**', // Next.jsのビルド生成物
       '**/dist/**', // 一般的なビルド生成物
+      '**/src-tauri/target/**', // Rust/Tauriのビルド生成物
       '**/playwright/**', // PlaywrightのCT用ファイル
       '**/playwright-report/**', // Playwrightのレポート
       '**/test-results/**', // Playwrightのテスト結果
     ],
   },
+  js.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
+  reactHooks.configs.flat.recommended,
+  reactRefresh.configs.vite,
   {
     files: ['**/*.{ts,tsx}'],
-
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.strict,
-      ...tseslint.configs.stylistic,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
 
     languageOptions: {
       globals: globals.browser,
     },
   },
   {
+    files: ['**/*.{ts,tsx}'],
+
+    plugins: {
+      '@typescript-eslint': tseslint.plugin,
+    },
+
     rules: {
       /* ==========================================================
         基本的な禁止事項
