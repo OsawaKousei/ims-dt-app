@@ -27,7 +27,6 @@ dist-ssr
 # Documentation: keep local historical references private to this workspace
 docs/*
 !docs/guidelines/
-!docs/reviews/
 
 # Local environment and generated test artifacts
 .env
