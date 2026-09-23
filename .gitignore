@@ -25,4 +25,5 @@ dist-ssr
 *.sw?
 
 # Documentation
-docs/
+docs/*
+!docs/guidelines/
