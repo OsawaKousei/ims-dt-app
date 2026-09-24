@@ -19,6 +19,7 @@ args = [
     "npx",
     "-y",
     "chrome-devtools-mcp@latest",
-    "--isolated"
+    "--isolated",
+    "--headless"
 ]
 startup_timeout_sec = 30
