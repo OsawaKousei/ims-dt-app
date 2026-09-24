@@ -7,3 +7,18 @@ web_search = "live"
 
 [sandbox_workspace_write]
 network_access = true
+
+[projects."/home/kousei/personal/DesktopApp/ims-dt-app"]
+trust_level = "trusted"
+
+[mcp_servers.chrome-devtools]
+command = "/home/kousei/.local/share/fnm/fnm"
+args = [
+    "exec",
+    "--using=24.21.0",
+    "npx",
+    "-y",
+    "chrome-devtools-mcp@latest",
+    "--isolated"
+]
+startup_timeout_sec = 30
