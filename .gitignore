@@ -15,6 +15,7 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
 .idea
 .DS_Store
 *.suo
@@ -22,3 +23,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Documentation: keep local historical references private to this workspace
+docs/*
+!docs/guidelines/
+
+# Local environment and generated test artifacts
+.env
+.env.*
+!.env.example
+coverage/
+.vitest/
+*.tsbuildinfo
